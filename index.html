@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificação</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .notification {
+            background-color: white;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #no {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="notification">
+        <p>peitinho?🥺🙏</p>
+        <div class="buttons">
+            <button id="yes">Sim</button>
+            <button id="no">Não</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('yes').onclick = function() {
+            window.location.href = 'https://youtu.be/FzG4uDgje3M?si=HdX_ElAr6d-xMjLq';
+        };
+
+        function moveNoButton() {
+            const noButton = document.getElementById('no');
+            const x = Math.floor(Math.random() * (window.innerWidth - noButton.clientWidth));
+            const y = Math.floor(Math.random() * (window.innerHeight - noButton.clientHeight));
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        }
+
+        setInterval(moveNoButton, 300); // Move the "No" button every 300 milliseconds
+    </script>
+</body>
+</html>
